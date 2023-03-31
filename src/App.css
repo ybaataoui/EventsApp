@@ -1,6 +1,77 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.whole-page {
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  width: 85%;
+  margin-left: 300px;
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+
+}
+
+.event {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 450px;
+  width: 25%; 
+}
+
+img {
+  height: 350px;
+  width: 350px;
+  box-shadow: 0 15px 25px #817c7c33;
+  border-radius: 5px;
+ 
+}
+
+
+.sideNav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #f5d7d7;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterContainer{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.cities {
+  margin-left: 20px;
 }
