@@ -75,3 +75,16 @@ img {
 .cities {
   margin-left: 20px;
 }
+
+nav {
+  position: fixed; 
+  top: 0; 
+  right: 0; 
+}
+
+.home-link 
+{
+  border:1px dotted white;
+  width:75px;
+  list-style: none;
+}

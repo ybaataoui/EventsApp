@@ -56,8 +56,6 @@ function App() {
     }
   }
 
-  
-
   console.log(filteredResults)
   return (
     <div className="whole-page">
@@ -81,8 +79,6 @@ function App() {
             </select>
           </div>
         </div>
-                  
-
 
         <div className='eventContainer'>
           {searchInput.length > 0 
@@ -104,10 +100,7 @@ function App() {
             )
             
             }
-        </div>
-
-
-        
+        </div>  
       </div>
     </div>
   )
