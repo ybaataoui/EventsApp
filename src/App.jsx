@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Event from './Components/event';
+import Event from './Components/Event';
 import NavBar from './Components/NavBar';
 
 const API_KEY = import.meta.env.CLIENT_ID;
@@ -56,10 +56,11 @@ function App() {
     }
   }
 
-  console.log(filteredResults)
+  //console.log(filteredResults)
   return (
     <div className="whole-page">
       <NavBar />
+      
       <div className='container'>
 
         <div className='filterContainer'>
@@ -73,7 +74,7 @@ function App() {
           <div className='cities'>
             <select name="" id="cities" onSelect={(inputString) => filterItems(inputString.target.value)}>
               {list.map((event) => 
-                <option value="event.venue.city">{event.venue.city}</option>
+                <option value="event.venue.city" key={event.id}>{event.venue.city}</option>
                 
               )}
             </select>
@@ -85,17 +86,20 @@ function App() {
             ? filteredResults.map((event) =>
               <Event 
                 image = {event.performers[0].image}
-                name = {event.performers[0].name}
+                title = {event.performers[0].name}
                 date = {event.datetime_utc}
                 place = {event.venue.city}
+                id = {event.id}
+                key={event.id}
                 /> 
             )
             : list && Object.entries(list).map(([event]) => 
               <Event 
                 image = {list[event].performers[0].image}
-                name = {list[event].performers[0].name}
-                date = {list[event].datetime_utc}
+                title = {list[event].performers[0].name}
+                id = {list[event].id}
                 place = {list[event].venue.city}
+                date = {event.datetime_utc}
               />
             )
             

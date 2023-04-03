@@ -1,6 +1,11 @@
+import EventDetails from "../Components/eventDetails";
+
 const DetailView = () => {
     return (
-     <div></div>
+     <div>
+
+      <EventDetails />
+     </div>
     );
   };
   

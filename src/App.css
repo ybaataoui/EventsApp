@@ -35,13 +35,13 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  height: 450px;
+  height: 600px;
   width: 25%; 
 }
 
 img {
-  height: 350px;
-  width: 350px;
+  height: 250px;
+  width: 250px;
   box-shadow: 0 15px 25px #817c7c33;
   border-radius: 5px;
  
@@ -87,4 +87,8 @@ nav {
   border:1px dotted white;
   width:75px;
   list-style: none;
+}
+
+.idDiv {
+  background-color: rgb(118, 10, 219);
 }
