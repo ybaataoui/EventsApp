@@ -5,7 +5,25 @@
   text-align: center;
 }
 
-.whole-page {
+.sideNav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #f5d7d7;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+/* .whole-page {
   display: flex;
   flex-direction: row;
   padding: 50px;
@@ -19,7 +37,7 @@
   justify-content: center;
   place-items: center;
   width: 85%;
-  margin-left: 300px;
+  
 }
 
 .eventContainer {
@@ -48,24 +66,17 @@ img {
 }
 
 
-.sideNav {
-  height: 100%;
-  width: 15%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background-color: #f5d7d7;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
+
+
+
+
+
+
+
+.idDiv {
+  background-color: rgb(118, 10, 219);
+} */
 .filterContainer{
   display: flex;
   flex-direction: row;
@@ -75,13 +86,6 @@ img {
 .cities {
   margin-left: 20px;
 }
-
-nav {
-  position: fixed; 
-  top: 0; 
-  right: 0; 
-}
-
 .home-link 
 {
   border:1px dotted white;
@@ -89,6 +93,8 @@ nav {
   list-style: none;
 }
 
-.idDiv {
-  background-color: rgb(118, 10, 219);
+nav {
+  position: fixed; 
+  top: 10 px; 
+  right: 0; 
 }

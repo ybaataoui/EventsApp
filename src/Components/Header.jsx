@@ -3,7 +3,7 @@ const Header = () => {
 
     return (
         <div>
-            <h1>Marvel Caracters</h1>
+            <h1>Events</h1>
         </div>
     )
 }

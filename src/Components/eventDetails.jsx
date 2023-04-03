@@ -1,5 +1,8 @@
 import React, { Component, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from "./NavBar";
+
 const API_KEY = import.meta.env.CLIENT_ID;
 
 
@@ -28,46 +31,49 @@ const eventDetails = () => {
     }, [])
 
     return (
-     <div>
+     <div className="container">
+        <NavBar />
         <h1>{fullDetails.title}</h1>
-        <img src={eventPerformers.image} alt="" />
-        <div> </div>
+        <br />
+        <div> 
+            <img src={eventPerformers.image} alt="" />
+        </div>
         <br></br>
-        <table>
+        <table className="table">
             <tbody>
-                <tr>
-                <th>Title </th>
+                <tr className="text-start">
+                <th >Title </th>
                 <td>{fullDetails.title}</td>
                 </tr> 
-                <tr>
+                <tr className="text-start">
                 <th>Announce Date </th>
                 <td>{fullDetails.announce_date} </td>
                 </tr>
-                <tr>
+                <tr className="text-start">
                 <th>Type </th>
                 <td>{fullDetails.type}</td>
                 </tr>
-                <tr>
+                <tr className="text-start">
                 <th>Status </th>
                 <td>{fullDetails.status}</td>
                 </tr>
-                <tr>
+                <tr className="text-start">
                 <th>Performer Name</th>
                 <td>{eventPerformers.name}</td>
                 </tr>
-                <tr>
+                <tr className="text-start">
                 <th>Address </th>
                 <td>{eventVenue.address} {eventVenue.extended_address}</td>
                 </tr>
-                <tr>
+                <tr className="text-start">
                 <th>Venue Capacity </th>
                 <td>{eventVenue.capacity}</td>
                 </tr>
-                <tr>
+                <tr className="text-start">
                 <th>Buy Tickets</th>
-                <td>{eventVenue.url}</td>
+                <td><a href={eventVenue.url}>{eventVenue.url}</a></td>
                 </tr>
-                <tr>
+                <tr className="text-start">
                 <th>Ticket Price Start From : </th>
                 <td>${eventStats.lowest_price} </td>
                 </tr>

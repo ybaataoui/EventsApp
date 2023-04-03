@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Event from './Components/Event';
 import NavBar from './Components/NavBar';
+import EventChart from './Components/eventChart';
 
 const API_KEY = import.meta.env.CLIENT_ID;
 
@@ -13,7 +15,7 @@ function App() {
   
   
   
-  console.log(list)
+  //console.log(list)
   
   useEffect(() => {
     const fetchEvents = async () => {
@@ -58,53 +60,66 @@ function App() {
 
   //console.log(filteredResults)
   return (
-    <div className="whole-page">
-      <NavBar />
-      
-      <div className='container'>
-
-        <div className='filterContainer'>
-          <div className='input'>
-            <input 
+    <div className="container-fluid">
+      <div className='row '>
+        <div className='col'>
+          <NavBar />
+        </div>
+        <div className='col '>
+          <div className='row p-4 '>
+            <div className="col">
+              <input 
+                className="form-control w-50 p-2"
                 type="text"
-                placeholder='Search...' 
+                placeholder='Search by Name, Title, City, or ID' 
+                aria-label="default input example"
+                
                 onChange={(inputString) => searchItems(inputString.target.value)}
             />
             </div>
-          <div className='cities'>
-            <select name="" id="cities" onSelect={(inputString) => filterItems(inputString.target.value)}>
+            <div class="col">
+              <select className='form-select w-25 p-2' name="" id="cities" onSelect={(inputString) => filterItems(inputString.target.value)}>
               {list.map((event) => 
                 <option value="event.venue.city" key={event.id}>{event.venue.city}</option>
                 
               )}
             </select>
+            </div> 
+          </div>
+
+          <div className='container'>
+            <div className='row'>
+              {searchInput.length > 0 
+                ? filteredResults.map((event) =>
+                  <div className="col-sm-3">
+                    <Event 
+                    image = {event.performers[0].image}
+                    title = {event.performers[0].name}
+                    date = {event.datetime_utc}
+                    place = {event.venue.city}
+                    id = {event.id}
+                    key={event.id}
+                    /> 
+                  </div>
+                )
+                : list && Object.entries(list).map(([event]) => 
+                  <div className='col-sm-3'>
+                  <Event 
+                    image = {list[event].performers[0].image}
+                    title = {list[event].performers[0].name}
+                    id = {list[event].id}
+                    place = {list[event].venue.city}
+                    date = {event.datetime_utc}
+                  />
+                  </div>
+                )  
+                }
+            </div>  
+          </div>
+          <div className='container-fluid'>
+            <EventChart />
           </div>
         </div>
-
-        <div className='eventContainer'>
-          {searchInput.length > 0 
-            ? filteredResults.map((event) =>
-              <Event 
-                image = {event.performers[0].image}
-                title = {event.performers[0].name}
-                date = {event.datetime_utc}
-                place = {event.venue.city}
-                id = {event.id}
-                key={event.id}
-                /> 
-            )
-            : list && Object.entries(list).map(([event]) => 
-              <Event 
-                image = {list[event].performers[0].image}
-                title = {list[event].performers[0].name}
-                id = {list[event].id}
-                place = {list[event].venue.city}
-                date = {event.datetime_utc}
-              />
-            )
-            
-            }
-        </div>  
       </div>
     </div>
   )
